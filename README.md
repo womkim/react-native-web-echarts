@@ -7,7 +7,7 @@
 #### 安装
 
 ```
-npm install react-native-web-echarts
+npm install react-native-web-echarts --save
 ```
 
 #### 使用
