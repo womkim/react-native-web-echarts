@@ -1,0 +1,25 @@
+{
+  "name": "react-native-web-echarts",
+  "version": "1.0.0",
+  "description": "react-native echarts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/womkim/react-native-web-echarts.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "with",
+    "echarts"
+  ],
+  "author": "womkim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/womkim/react-native-web-echarts/issues"
+  },
+  "homepage": "https://github.com/womkim/react-native-web-echarts#readme"
+}
