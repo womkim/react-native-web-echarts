@@ -30,6 +30,11 @@ export default class Echarts extends React.Component {
         injectedJavaScript={renderChart(this.props)}
         source={debug ? require('./tpl.html') : { uri:'file:///android_asset/tpl.html' }}
         startInLoadingState={false}
+        onLoad={() => {console.log('load success')}}
+        onError={() => {console.log('load error')}}
+        mixedContentMode={'always'}
+        domStorageEnabled={true}
+        javaScriptEnabled={true}
       />
     </View>
   }
