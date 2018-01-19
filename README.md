@@ -60,6 +60,7 @@ export default class EcahrtsDemo extends React.Component {
 
 #### 说明
 - 项目原理是在页面中建立一个固定大小的 `webview` 用来以网页的形式加载 `echarts` 的组件，所有的图表都是加载的一个html里面的 `echarts` 组件，根据设置 `option` 内容的不同表现出不同的图形。
+- 由于是web加载方式，所有图形显示会有一定的延迟
 - **由于在 `Android` 环境下，开发模式和生产模式读取文件资源形式[不同](http://blog.csdn.net/luo_xinran/article/details/71787831)，所以在生产模式下需要复制项目目录下的 `echarts.min.js` 和 `tpl.html` 文件到 `android/app/src/main/assets` 目录下，打包后才能正常显示。**
 - 开发者可以使用任意版本的 `echarts` 库，只需要将目录下 `echarts.min.js` 文件替换为需要的版本即可（注意安卓需要同时替换 `assets` 目录下的文件）
 - 开发者可以使用 `echarts` 的其他[扩展库](http://echarts.baidu.com/download-extension.html)，需要修改 `tpl.html` 文件，在 `<heard>` 中引入 `echarts` 文件的后面 添加对应库的引用，如 `<script src="echarts-liquidfill.js"></script>`，同时需要将对应的库文件复制到本项目目录下（安卓版同时需要在原生`assets`目录下）
