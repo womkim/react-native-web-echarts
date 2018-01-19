@@ -6,8 +6,13 @@
 
 #### 安装
 
+使用 `npm` 安装
 ```
 npm install react-native-web-echarts --save
+```
+使用 `yarn` 安装（推荐）
+```
+yarn add react-native-web-echarts
 ```
 
 #### 使用
