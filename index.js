@@ -23,12 +23,12 @@ export default class Echarts extends React.Component {
 
   render () {
     const { height, width, debug, style } = this.props
-    return <View style={{flex: 1, height}}>
+    return <View style={{width, height}}>
       <WebView
         ref={node => { this.echart = node }}
-        style={[style, {height, width}]}
+        style={[style, {height, width, backgroundColor: 'transparent'}]}
         injectedJavaScript={renderChart(this.props)}
-        source={debug ? require('./tpl.html') : { uri:'file:///android_asset/tpl.html' }}
+        source={debug || Platform.OS === 'ios' ? require('./tpl.html') : { uri:'file:///android_asset/tpl.html' }}
         startInLoadingState={false}
       />
     </View>
