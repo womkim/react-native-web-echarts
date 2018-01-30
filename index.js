@@ -4,7 +4,7 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, WebView } from 'react-native'
+import { View, WebView, Platform } from 'react-native'
 
 const renderChart = ({ height, option }) => `
   var main = document.getElementById('main');
