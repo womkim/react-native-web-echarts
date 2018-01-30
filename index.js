@@ -14,22 +14,30 @@ const renderChart = ({ height, option }) => `
 `
 
 export default class Echarts extends React.Component {
-
   componentWillReceiveProps (nextProps) {
-    if (JSON.stringify(this.props.option) !== JSON.stringify(nextProps)) {
-      this.echart.reload()
+    if (JSON.stringify(this.props.option) !== JSON.stringify(nextProps.option) || this.props.height !== nextProps.height) {
+      this.echart.injectJavaScript(renderChart({ height: nextProps.height, option: nextProps.option }))
     }
   }
 
   render () {
-    const { height, width, debug, style } = this.props
+    const { height, width, debug, style, option, onLoadStart, onLoad, onError, onLoadEnd, onMessage, renderLoading, renderError } = this.props
     return <View style={{width, height}}>
       <WebView
         ref={node => { this.echart = node }}
         style={[style, {height, width, backgroundColor: 'transparent'}]}
-        injectedJavaScript={renderChart(this.props)}
+        injectedJavaScript={renderChart({ height, option })}
         source={debug || Platform.OS === 'ios' ? require('./tpl.html') : { uri:'file:///android_asset/tpl.html' }}
         startInLoadingState={false}
+        javaScriptEnabled={true}
+        scalesPageToFit={false}
+        onLoadStart={onLoadStart}
+        onLoad={onLoad}
+        onError={onError}
+        onLoadEnd={onLoadEnd}
+        onMessage={onMessage}
+        renderLoading={renderLoading}
+        renderError={renderError}
       />
     </View>
   }
@@ -46,7 +54,14 @@ Echarts.propTypes = {
   ]),
   debug: PropTypes.bool,
   style: PropTypes.object,
-  option: PropTypes.object.isRequired
+  option: PropTypes.object.isRequired,
+  onLoadStart: PropTypes.func,
+  onLoad: PropTypes.func,
+  onError: PropTypes.func,
+  onLoadEnd: PropTypes.func,
+  onMessage: PropTypes.func,
+  renderLoading: PropTypes.func,
+  renderError: PropTypes.func
 }
 
 Echarts.defaultProps = {
