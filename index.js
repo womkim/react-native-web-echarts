@@ -21,13 +21,13 @@ export default class Echarts extends React.Component {
   }
 
   render () {
-    const { height, width, debug, style, option, onLoadStart, onLoad, onError, onLoadEnd, onMessage, renderLoading, renderError } = this.props
+    const { height, width, style, option, onLoadStart, onLoad, onError, onLoadEnd, onMessage, renderLoading, renderError } = this.props
     return <View style={{width, height}}>
       <WebView
         ref={node => { this.echart = node }}
         style={[style, {height, width, backgroundColor: 'transparent'}]}
         injectedJavaScript={renderChart({ height, option })}
-        source={debug || Platform.OS === 'ios' ? require('./tpl.html') : { uri:'file:///android_asset/tpl.html' }}
+        source={__DEV__ || Platform.OS === 'ios' ? require('./tpl.html') : { uri:'file:///android_asset/tpl.html' }}
         startInLoadingState={false}
         javaScriptEnabled={true}
         scalesPageToFit={false}
@@ -52,7 +52,6 @@ Echarts.propTypes = {
     PropTypes.number,
     PropTypes.string
   ]),
-  debug: PropTypes.bool,
   style: PropTypes.object,
   option: PropTypes.object.isRequired,
   onLoadStart: PropTypes.func,
@@ -66,6 +65,5 @@ Echarts.propTypes = {
 
 Echarts.defaultProps = {
   width: '100%',
-  height: 300,
-  debug: true
+  height: 300
 }
