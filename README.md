@@ -25,43 +25,76 @@ import Echarts from 'react-native-web-echarts'
 
 export default class EcahrtsDemo extends React.Component {
   state = {
-    data: [15, 10, 26, 5, 20, 30]
+    data1: [1, 2, 3, 4],
+    data2: [2, 4, 6, 8],
+    data3: [1, 2, 3, 4]
   }
   render () {
+    const { data1, data2, data3 } = this.state
     const option = {
       title: {
         text: 'ECharts demo'
       },
       tooltip: {},
-      legend: {
-        data:['销量']
+      angleAxis: {
       },
-      xAxis: {
-        data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+      radiusAxis: {
+        type: 'category',
+        data: ['周一', '周二', '周三', '周四'],
+        z: 10
       },
-      yAxis: {},
+      polar: {
+      },
       series: [{
-        name: '销量',
         type: 'bar',
-        data: this.state.data
-      }]
+        data: data1,
+        coordinateSystem: 'polar',
+        name: 'A',
+        stack: 'a'
+      }, {
+        type: 'bar',
+        data: data2,
+        coordinateSystem: 'polar',
+        name: 'B',
+        stack: 'a'
+      }, {
+        type: 'bar',
+        data: data3,
+        coordinateSystem: 'polar',
+        name: 'C',
+        stack: 'a'
+      }],
+      legend: {
+        show: true,
+        data: ['A', 'B', 'C'],
+        right: 0
+      }
     }
     return <View style={{flex: 1}}>
       <View style={{flex: 1, alignItems: 'center'}}>
-        <Text>{'echarts demo'}</Text>
+        <Text>{'\necharts demo\n'}</Text>
         <Echarts
           option={option}
           height={300}
         />
         <Button
           title="reload"
-          onPress={() => { this.setState({ data: [...Array(6)].map(_ => Math.ceil(Math.random() * (30))) })} }
+          onPress={() => { this.setState({
+            data1: [...new Array(4)].map(_ => Math.ceil(Math.random() * (10))),
+            data2: [...new Array(4)].map(_ => Math.ceil(Math.random() * (10))),
+            data3: [...new Array(4)].map(_ => Math.ceil(Math.random() * (10)))
+          })} }
         />
       </View>
     </View>
   }
 }
 ```
+
+##### 效果
+android
+
+[android-screenshot](./screenshot-01.jpg)
 
 ##### 参数
 - `option` echarts的参数，跟echarts使用一样，参考[`echarts`文档](http://echarts.baidu.com/option.html)
