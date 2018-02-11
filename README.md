@@ -94,7 +94,7 @@ export default class EcahrtsDemo extends React.Component {
 ##### 效果
 android
 
-[android-screenshot](./screenshot-01.jpg)
+![android-screenshot](./screenshot-01.jpg)
 
 ##### 参数
 - `option` echarts的参数，跟echarts使用一样，参考[`echarts`文档](http://echarts.baidu.com/option.html)
