@@ -2,7 +2,6 @@
 
 #### 介绍
 要在 [`react-native`](http://facebook.github.io/react-native/) 上使用 [`echarts`](http://echarts.baidu.com) 的图表库，目前方法主要是使用 `react-native` 的 `webview` 利用网页的形式加载 `echarts` 的图形。
-本项目尽量使用少的代码实现本功能。
 
 #### 安装
 
@@ -66,7 +65,7 @@ export default class EcahrtsDemo extends React.Component {
 
 ##### 参数
 - `option` echarts的参数，跟echarts使用一样，参考[`echarts`文档](http://echarts.baidu.com/option.html)
-- `width` （可选/默认为**100%**）组件宽度，可以是数字或百分比
+- `width` （可选/默认为**300**）组件宽度，可以是数字或百分比
 - `height` （可选/默认**300**）组件高度，可以是数字或百分比
 - `style` （可选）除了宽度和高度已经固定设置以外， `style` 属性可以为组件添加其他样式
 - 其他 `webview` 属性：（可选）
