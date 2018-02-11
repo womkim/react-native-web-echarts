@@ -1,6 +1,6 @@
 {
   "name": "react-native-web-echarts",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "react-native echarts",
   "main": "index.js",
   "repository": {
@@ -8,9 +8,7 @@
     "url": "git+https://github.com/womkim/react-native-web-echarts.git"
   },
   "keywords": [
-    "react",
-    "native",
-    "with",
+    "react-native",
     "echarts"
   ],
   "author": "womkim",
