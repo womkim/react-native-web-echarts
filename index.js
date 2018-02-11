@@ -27,10 +27,12 @@ export default class Echarts extends React.Component {
         ref={node => { this.echart = node }}
         style={[style, {height, width, backgroundColor: 'transparent'}]}
         injectedJavaScript={renderChart({ height, option })}
-        source={__DEV__ || Platform.OS === 'ios' ? require('./tpl.html') : { uri:'file:///android_asset/tpl.html' }}
-        startInLoadingState={false}
+        source={Platform.OS === 'android' && !__DEV__ ? { uri:'file:///android_asset/tpl.html' } : require('./tpl.html')}
         javaScriptEnabled={true}
-        scalesPageToFit={false}
+        domStorageEnabled={true}
+        scalesPageToFit={true}
+        startInLoadingState={false}
+        decelerationRate="normal"
         onLoadStart={onLoadStart}
         onLoad={onLoad}
         onError={onError}
@@ -64,6 +66,6 @@ Echarts.propTypes = {
 }
 
 Echarts.defaultProps = {
-  width: '100%',
+  width: 300,
   height: 300
 }
