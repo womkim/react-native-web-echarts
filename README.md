@@ -14,8 +14,6 @@ npm install react-native-web-echarts --save
 yarn add react-native-web-echarts
 ```
 
-若当前版本不能用，可以指定版本安装: react-native-web-echarts@1.1.7
-
 #### 使用
 
 ##### 示例
