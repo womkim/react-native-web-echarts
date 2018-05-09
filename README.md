@@ -80,9 +80,9 @@ export default class EcahrtsDemo extends React.Component {
         <Button
           title="reload"
           onPress={() => { this.setState({
-            data1: [...new Array(4)].map(_ => Math.ceil(Math.random() * (10))),
-            data2: [...new Array(4)].map(_ => Math.ceil(Math.random() * (10))),
-            data3: [...new Array(4)].map(_ => Math.ceil(Math.random() * (10)))
+            data1: Array(4).fill(0).map(_ => Math.ceil(Math.random() * (10))),
+            data2: Array(4).fill(0).map(_ => Math.ceil(Math.random() * (10))),
+            data3: Array(4).fill(0).map(_ => Math.ceil(Math.random() * (10)))
           })} }
         />
       </View>
