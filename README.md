@@ -1,4 +1,4 @@
-### react-native-web-echarts
+### react-native-web-echarts ([点我查看中文版](README.ZH.md))
 
 #### Introduction
 Use the chart library of [`echarts`] (http://echarts.baidu.com) on [`react-native`] (http://facebook.github.io/react-native/), the current method is mainly The `echarts` graphic is loaded as a web page using `react-native``webview`.
