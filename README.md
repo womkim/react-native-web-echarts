@@ -1,7 +1,7 @@
 ### react-native-web-echarts ([点我查看中文版](README.ZH.md))
 
 #### Introduction
-Use the chart library of [`echarts`] (http://echarts.baidu.com) on [`react-native`] (http://facebook.github.io/react-native/), the current method is mainly The `echarts` graphic is loaded as a web page using `react-native``webview`.
+Use the chart library of [`echarts`](http://echarts.baidu.com) on [`react-native`](http://facebook.github.io/react-native/), the current method is mainly The `echarts` graphic is loaded as a web page using `react-native` `webview`.
 
 #### Install
 
@@ -113,5 +113,5 @@ android
 #### Description
 - The principle of the project is to create a fixed-size `webview` in the page to load the components of `echarts` in the form of web pages. All the charts are loaded with an `echarts` component in an html, according to the setting of `option` content. Different shows different graphics.
 - Due to the web loading method, all graphics displays will have a certain delay.
-- **Since the development mode and production mode read [different] file resources in the "Android" environment (http://blog.csdn.net/luo_xinran/article/details/71787831), the project directory mode needs to be copied in production. The ``tpl.html` file in the `android / app / src / main / assets` directory will be displayed after packaging.**
+- **Since the development mode and production mode read [different] file resources in the "Android" environment (http://blog.csdn.net/luo_xinran/article/details/71787831), the project directory mode needs to be copied in production. The `tpl.html` file in the `android / app / src / main / assets` directory will be displayed after packaging.**
 - support `react-native-windows` ，reference： [example](https://github.com/jyiL/react-native-windows)
